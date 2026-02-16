@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jashvanth -Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+
+<body>
+    <!-- Animated Grid Background -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Animated Shapes -->
+    <div class="shapes-container">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF5E00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00B2FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)"
+                        stroke-width="2" />
+                    <polygon points="20,8 32,16 32,24 20,32 8,24 8,16" fill="url(#logoGradient)" opacity="0.3" />
+                    <circle cx="20" cy="20" r="3" fill="url(#logoGradient)" />
+                </svg>
+                <span class="logo-text">baLkiJash</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#creations" class="nav-link">Creations</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="nav-link theme-toggle" aria-label="Toggle Dark/Light Theme"><i
+                    class="fas fa-moon"></i></button>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-wrapper">
+            <!--Left -->
+            <div class="hero-left">
+                <div class="intro-bio">
+                    <h1 class="name">Hi, I'm <span>Balakirushnan Jashvanth</span></h1>
+                    <h2 class="role">Full Stack Developer</h2>
+                    <h3 class="current-role">Undergraduate Software Engineer</h3>
+                    <p class="description">
+                        Software Engineering undergraduate with hands-on industry experience as a Software Engineering
+                        Intern,
+                        contributing to real-world software applications. Experienced in full-stack development,
+                        API integration, and database management, with a strong focus on writing clean, maintainable
+                        code.
+                        Proven ability to work effectively in Agile team environments, with solid debugging,
+                        problem-solving,
+                        and communication skills.
+                        Motivated to continue learning and contribute as an Associate Software Engineer in a
+                        collaborative and fast-paced
+                        development team.
+                    </p>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://github.com/jashvanth370" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/balakirushnan-jashvanth-736a72280/" target="_blank"
+                        class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/94779430824" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://web.facebook.com/jv.jashva" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- Add more as needed -->
+                </div>
+
+                <div class="hero-content">
+                    <div class="text-rotator">
+                        <div class="text-set active">
+                            <h1 class="glitch-text" data-text="BUILDING">BUILDING</h1>
+                            <p class="subtitle">
+                                Crafting <span class="animated-word">innovative</span> software solutions that power the
+                                future.
+                            </p>
+                        </div>
+                        <div class="text-set">
+                            <h1 class="glitch-text" data-text="CREATING">CREATING</h1>
+                            <p class="subtitle">
+                                Delivering <span class="animated-word">scalable</span> and user-focused web
+                                applications.
+                            </p>
+                        </div>
+                        <div class="text-set">
+                            <h1 class="glitch-text" data-text="DESIGNING">DESIGNING</h1>
+                            <p class="subtitle">
+                                Building <span class="animated-word">intelligent</span> digital experiences with
+                                precision.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="cta-container">
+                    <a href="assets/Balakirushnan_Jashvanth_CV.pdf" class="cta-button cta-primary" download>Download
+                        CV</a>
+                    <a href="#home" class="cta-button cta-secondary">View Resume</a>
+                </div> -->
+            </div>
+            <!--Right-->
+            <div class="about-visual">
+                <div class="about-graphic">
+                    <img src="assets/jashvanth.jpg" alt="Jashvanth" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-visual">
+                <!-- <div class="about-graphic"></div> -->
+                <div class="about-graphic-alt">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+                <div class="cta-container">
+                    <a href="assets/jashvanth.pdf" class="cta-button cta-primary" download>Download
+                        CV</a>
+                    <a href="assets//jashvanth.pdf" class="cta-button cta-secondary">View Resume</a>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <p class="about-description">I am a driven final-year undergraduate at the University of Kelaniya,
+                    specializing in
+                    Net-Centric Software Engineering. I have hands-on experience in full-stack development,
+                    creating responsive and user-focused applications using ASP.NET for the backend and modern
+                    frontend frameworks like React and Angular. I am comfortable working with PostgreSQL for relational
+                    data management and have experience integrating databases into scalable, well-structured
+                    applications.
+                    My projects combine clean architecture, intuitive design, and modern styling using Bootstrap,
+                    Tailwind CSS, and Sass, delivering seamless user experiences across devices.</p>
+                <p>I am passionate about building practical, real-world solutions that solve problems effectively. I
+                    thrive at the intersection of design, logic, and user experience, writing maintainable, efficient
+                    code that meets both functional and visual requirements. Beyond coding, I bring strong collaboration
+                    skills, attention to detail, and a continuous learning mindset. Every project I work on reflects a
+                    commitment to quality, performance, and delivering software solutions that make a tangible impact.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="skills">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-card">
+
+            <!-- LEFT SIDE -->
+            <div class="experience-left">
+                <h3 class="role">Software Engineering Intern</h3>
+                <p class="company-name">Boffo System Labs (Pvt) Ltd</p>
+
+                <p class="experience-description">
+                    Worked on developing scalable web applications using ASP.NET and Angular.
+                    Designed RESTful APIs, integrated PostgreSQL databases, and optimized
+                    application performance. Collaborated with cross-functional teams
+                    to deliver user-centric solutions with clean and maintainable code.
+                </p>
+
+                <!-- Tech Stack -->
+                <div class="tech-stack">
+
+                    <!-- C# -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                            alt="C#" />
+                        <span>C#</span>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" />
+                        <span>JavaScript</span>
+                    </div>
+
+                    <!-- TypeScript -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            alt="TypeScript" />
+                        <span>TypeScript</span>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                            alt="CSS" />
+                        <span>CSS</span>
+                    </div>
+
+                    <!-- Tailwind -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                            alt="Tailwind" />
+                        <span>Tailwind</span>
+                    </div>
+                    <!-- ASP.NET -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                            alt="ASP.NET" />
+                        <span>ASP.NET</span>
+                    </div>
+
+                    <!-- Angular -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                            alt="Angular" />
+                        <span>Angular</span>
+                    </div>
+
+                    <!-- PostgreSQL -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                            alt="PostgreSQL" />
+                        <span>PostgreSQL</span>
+                    </div>
+
+                    <!-- REST API -->
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                            alt="REST API" />
+                        <span>REST API</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="experience-right">
+                <div class="logo-wrapper">
+                    <img src="assets/boffosys_logo.jpeg" alt="Company Logo" class="company-logo">
+                </div>
+
+                <div class="experience-meta">
+                    <div class="meta-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>Aug 2025 – Feb 2026</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Colombo, Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="skills">
+        <h2 class="section-title">Education</h2>
+        <div class="education-content">
+            <div class="timeline-line"></div>
+            <!-- University Card -->
+            <div class="edu-card">
+                <div class="edu-left">
+                    <div class="edu-logo">
+                        <img src="assets/university-of-kelaniya-logo-png_seeklogo-480563.png" alt="University Logo">
+                    </div>
+                    <div class="edu-info">
+                        <h3>BSc(Hons) Software Engineering</h3>
+                        <p class="institution">University of Kelaniya</p>
+                        <p class="edu-period"><i class="fa-solid fa-calendar-days"></i> 2023 - Present</p>
+                        <p class="edu-stat">GPA: 3.45/4.00</p>
+                        <span class="edu-focus">
+                            <i class="fa-solid fa-network-wired"></i> Net-Centric Software Engineering
+                        </span>
+                    </div>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-location"><i class="fa-solid fa-location-dot"></i> Kelaniya, Sri Lanka</span>
+                    <span class="edu-achievements">Software Development Projects</span>
+                </div>
+            </div>
+
+            <!-- School Card -->
+            <div class="edu-card">
+                <div class="edu-left">
+                    <div class="edu-logo">
+                        <img src="assets/375832245_799990098589485_1368426088168443609_n.jpg" alt="School Logo">
+                    </div>
+                    <div class="edu-info">
+                        <h3>Advanced Level</h3>
+                        <p class="institution">BT/KK/Chenkalady Central College</p>
+                        <p class="edu-period"><i class="fa-solid fa-calendar-days"></i> 2019 - 2022</p>
+                        <p class="edu-stat"></i> Z-Score: 2.0101 </p>
+                        <span class="edu-focus">
+                            <i class="fa-solid fa-flask"></i> Physics • Mathematics • ICT
+                        </span>
+                    </div>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-location"><i class="fa-solid fa-location-dot"></i> Batticaloa, Sri Lanka</span>
+                    <span class="edu-achievements">First Division, Science Stream</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section with Tabs -->
+    <!-- <section class="features" id="features">
+        <h2 class="section-title">Core Features</h2>
+        <div class="features-container">
+            <div class="feature-tabs">
+                <div class="tab-item active" data-tab="performance">
+                    <span class="tab-icon">⚡</span>
+                    <span>Performance</span>
+                </div>
+                <div class="tab-item" data-tab="security">
+                    <span class="tab-icon">🔒</span>
+                    <span>Security</span>
+                </div>
+                <div class="tab-item" data-tab="network">
+                    <span class="tab-icon">🌐</span>
+                    <span>Network</span>
+                </div>
+                <div class="tab-item" data-tab="analytics">
+                    <span class="tab-icon">📊</span>
+                    <span>Analytics</span>
+                </div>
+                <div class="tab-item" data-tab="integration">
+                    <span class="tab-icon">🔧</span>
+                    <span>Integration</span>
+                </div>
+            </div>
+            <div class="feature-content">
+                <div class="content-panel active" id="performance">
+                    <h3>Lightning Fast Performance</h3>
+                    <p>Experience unprecedented speed with our quantum-powered infrastructure. Built on cutting-edge
+                        technology that delivers results at the speed of thought. Electric Xtra CSS template is brought
+                        to you by TemplateMo website.</p>
+                    <ul class="feature-list">
+                        <li>Sub-millisecond response times</li>
+                        <li>99.99% uptime guarantee</li>
+                        <li>Automatic scaling based on demand</li>
+                        <li>Real-time data synchronization</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="security">
+                    <h3>Military-Grade Security</h3>
+                    <p>Your data is protected by the most advanced encryption protocols available. Multi-layered
+                        security ensures complete protection against cyber threats. You may tell your friends about
+                        TemplateMo free css website and how easy it is.</p>
+                    <ul class="feature-list">
+                        <li>256-bit AES encryption</li>
+                        <li>Biometric authentication</li>
+                        <li>Zero-knowledge architecture</li>
+                        <li>Real-time threat detection</li>
+                        <li>Automated security updates</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="network">
+                    <h3>Global Neural Network</h3>
+                    <p>Connect to our worldwide infrastructure that spans across continents. Seamless integration with
+                        existing systems and future-proof architecture.</p>
+                    <ul class="feature-list">
+                        <li>200+ global data centers</li>
+                        <li>Intelligent routing algorithms</li>
+                        <li>Cross-platform compatibility</li>
+                        <li>5G and satellite connectivity</li>
+                        <li>Decentralized architecture</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="analytics">
+                    <h3>Advanced Analytics</h3>
+                    <p>Harness the power of AI-driven insights to make data-driven decisions. Real-time analytics and
+                        predictive modeling at your fingertips.</p>
+                    <ul class="feature-list">
+                        <li>Machine learning algorithms</li>
+                        <li>Predictive analytics</li>
+                        <li>Custom dashboard creation</li>
+                        <li>Real-time data visualization</li>
+                        <li>Automated reporting</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="integration">
+                    <h3>Seamless Integration</h3>
+                    <p>Connect with thousands of apps and services through our universal API. Built to work with your
+                        existing tools and workflows.</p>
+                    <ul class="feature-list">
+                        <li>RESTful API architecture</li>
+                        <li>WebSocket support</li>
+                        <li>SDK for major platforms</li>
+                        <li>One-click integrations</li>
+                        <li>Custom webhook support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Project section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="csharp">C#</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" data-filter="typescript">TypeScript</button>
+            <button class="filter-btn" data-filter="java">Java</button>
+        </div>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card" data-title="Hotel Management System"
+                data-description="A full-stack hotel booking system with authentication, room booking, admin dashboard and Stripe payment integration."
+                data-tech="React, Spring Boot, MySQL, Stripe" data-period="Jan 2025 - Mar 2025"
+                data-github="https://github.com/yourrepo1" data-category="javascript">
+
+                <img src="assets/photo-1591439657848-9f4b9ce436b9.avif" alt="Project">
+                <div class="project-info">
+                    <h3>Hotel Management System</h3>
+                    <p>Full-stack booking platform with payment integration.</p>
+
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Spring Boot</span>
+                        <span>MySQL</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project-card" data-title="Event Ticket Booking System"
+                data-description="An event booking platform with wishlist, JWT authentication, payment gateway and admin event management."
+                data-tech="React, Node.js, MySQL" data-period="Apr 2025 - Jun 2025"
+                data-github="https://github.com/yourrepo2" data-category="javascript">
+
+                <img src="assets/photo-1615454782617-e69bbd4f2969.avif" alt="Project">
+                <div class="project-info">
+                    <h3>Event Ticket Booking</h3>
+                    <p>Modern event booking platform with JWT auth.</p>
+
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>JWT</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project-card" data-title="Social Media Platform"
+                data-description="MERN stack social media application with posts, likes, comments, profile pictures and real-time updates."
+                data-tech="React, MongoDB, Express" data-period="Jul 2025 - Aug 2025"
+                data-github="https://github.com/jashvanth370/Social-Media-Platform" data-category="javascript">
+
+                <img src="assets/premium_photo-1720287601300-cf423c3d6760.avif" alt="Project">
+                <div class="project-info">
+                    <h3>Social Media App</h3>
+                    <p>MERN-based Instagram-style platform.</p>
+
+                    <div class="tech-stack">
+                        <span>MongoDB</span>
+                        <span>Express</span>
+                        <span>React</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+
+            <!-- Project 4 -->
+            <div class="project-card" data-title="E-Commerce Platform"
+                data-description="Full e-commerce system with cart, product filtering, authentication and payment integration."
+                data-tech="React, ASP.NET, SQL Server" data-period="Sep 2025 - Nov 2025"
+                data-github="https://github.com/jashvanth370/E-commerce-MERN" data-category="java">
+
+                <img src="assets/photo-1763568258752-fe55f4ab7267.avif" alt="Project">
+                <div class="project-info">
+                    <h3>E-Commerce Website</h3>
+                    <p>Online shopping platform with cart & payments.</p>
+
+                    <div class="tech-stack">
+                        <span>ASP.NET</span>
+                        <span>React</span>
+                        <span>SQL Server</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+            <!--Project 5-->
+            <div class="project-card" data-title="E-Commerce Platform"
+                data-description="Full e-commerce system with cart, product filtering, authentication and payment integration."
+                data-tech="React, ASP.NET, SQL Server" data-period="Sep 2025 - Nov 2025"
+                data-github="https://github.com/yourrepo4">
+
+                <img src="assets/photo-1763568258752-fe55f4ab7267.avif" alt="Project">
+                <div class="project-info">
+                    <h3>E-Commerce Website</h3>
+                    <p>Online shopping platform with cart & payments.</p>
+
+                    <div class="tech-stack">
+                        <span>ASP.NET</span>
+                        <span>React</span>
+                        <span>SQL Server</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+            <!--Project 6-->
+
+            <div class="project-card" data-title="Social Media Platform"
+                data-description="MERN stack social media application with posts, likes, comments, profile pictures and real-time updates."
+                data-tech="React, MongoDB, Express" data-period="Jul 2025 - Aug 2025"
+                data-github="https://github.com/yourrepo3">
+
+                <img src="assets/premium_photo-1720287601300-cf423c3d6760.avif" alt="Project">
+                <div class="project-info">
+                    <h3>Social Media App</h3>
+                    <p>MERN-based Instagram-style platform.</p>
+
+                    <div class="tech-stack">
+                        <span>MongoDB</span>
+                        <span>Express</span>
+                        <span>React</span>
+                    </div>
+
+                    <button class="view-btn">View Details</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Creations Section -->
+    <section class="features" id="creations">
+        <h2 class="section-title">My Creations</h2>
+
+        <div class="features-container">
+            <!-- Left Side Tabs -->
+            <div class="feature-tabs">
+                <div class="tab-item active" data-tab="projects">
+                    <span class="tab-icon">💻</span>
+                    <span>Projects</span>
+                </div>
+                <div class="tab-item" data-tab="posts">
+                    <span class="tab-icon">✍️</span>
+                    <span>Medium Posts</span>
+                </div>
+                <div class="tab-item" data-tab="articles">
+                    <span class="tab-icon">📰</span>
+                    <span>Articles</span>
+                </div>
+                <div class="tab-item" data-tab="opensource">
+                    <span class="tab-icon">🛠</span>
+                    <span>Open Source</span>
+                </div>
+                <div class="tab-item" data-tab="research">
+                    <span class="tab-icon">🔬</span>
+                    <span>Research</span>
+                </div>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="feature-content">
+
+                <!-- PROJECTS -->
+                <div class="content-panel active" id="projects">
+                    <h3>Featured Projects</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Event Ticket Booking System</strong><br>
+                            React + Spring Boot + Stripe Integration
+                        </li>
+                        <li>
+                            <strong>Hotel Management System</strong><br>
+                            React + Spring Boot + MySQL
+                        </li>
+                        <li>
+                            <strong>Import/Export Management App</strong><br>
+                            React + Node.js + MySQL
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- MEDIUM POSTS -->
+                <div class="content-panel" id="posts">
+                    <h3>Medium Articles</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Understanding JWT Authentication</strong><br>
+                            A beginner-friendly guide to token-based security.
+                        </li>
+                        <li>
+                            <strong>REST API Best Practices</strong><br>
+                            Clean architecture for scalable backend systems.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ARTICLES -->
+                <div class="content-panel" id="articles">
+                    <h3>Technical Articles</h3>
+                    <ul class="feature-list">
+                        <li>How to Build Scalable ASP.NET APIs</li>
+                        <li>PostgreSQL Optimization Techniques</li>
+                        <li>Clean Code Principles for Developers</li>
+                    </ul>
+                </div>
+
+                <!-- OPEN SOURCE -->
+                <div class="content-panel" id="opensource">
+                    <h3>Open Source Contributions</h3>
+                    <ul class="feature-list">
+                        <li>Contributed to UI improvements in open-source React project</li>
+                        <li>Bug fixes and documentation improvements</li>
+                    </ul>
+                </div>
+
+                <div class="content-panel" id="research">
+                    <h3>Research & Academic Work</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Scalable Web Application Architecture</strong><br>
+                            Research on designing modular and maintainable backend systems
+                            using ASP.NET and RESTful APIs.
+                        </li>
+                        <li>
+                            <strong>Database Optimization Techniques</strong><br>
+                            Study on query performance tuning and indexing strategies
+                            in PostgreSQL.
+                        </li>
+                        <li>
+                            <strong>Modern Frontend Performance Strategies</strong><br>
+                            Analysis of state management and rendering optimization
+                            in React applications.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="success-message" id="successMessage">
+                        Message Sent Successfully!
+                    </div>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Connect With Us , Let’s Build Something Amazing</h3>
+                <p>I’m open to internships, collaborations, and exciting projects.</p>
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-details">
+                        <h4>Email</h4>
+                        <p>balakirushnanjashvanth@gmailcom</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📱</div>
+                    <div class="info-details">
+                        <h4>Phone</h4>
+                        <p>+94 77-(94 30 824)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h4>Location</h4>
+                        <p>Batticaloa, Sri Lanka</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <p>Interactive Map</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Batticaloa, Sri Lanka</p>
+                    </div>
+                    <div class="map-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p><strong>Tech Stack:</strong> <span id="modalTech"></span></p>
+            <p><strong>Time Period:</strong> <span id="modalPeriod"></span></p>
+            <a id="modalGithub" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+
+            <p class="copyright">
+                © 2025 Balakirushnan Jashvanth. All rights reserved
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="footer-links">
+                <a href="https://github.com/jashvanth370" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/balakirushnan-jashvanth-736a72280/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://wa.me/94779430824" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="mailto:balakirushnanjashvanth@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("RzSd08eevOGB06Ywa");
+        })();
+    </script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
