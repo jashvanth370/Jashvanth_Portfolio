@@ -66,18 +66,26 @@ toggleBtn.addEventListener("click", () => {
     }
 });
 
-//scroll
-const cards = document.querySelectorAll(".edu-card");
+// Global Scroll Reveal Observer
+const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .edu-card");
 
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            entry.target.classList.add("active");
+            if (entry.target.classList.contains("edu-card")) {
+                entry.target.classList.add("show"); // Maintaining legacy class
+            }
+        } else {
+            entry.target.classList.remove("active");
+            if (entry.target.classList.contains("edu-card")) {
+                entry.target.classList.remove("show");
+            }
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
-cards.forEach(card => observer.observe(card));
+revealElements.forEach(el => revealObserver.observe(el));
 
 //Filter section 
 const modal = document.getElementById("projectModal");
@@ -89,20 +97,30 @@ const modalGithub = document.getElementById("modalGithub");
 
 document.querySelectorAll(".view-btn").forEach(button => {
     button.addEventListener("click", function () {
+
         const card = this.closest(".project-card");
 
-        modalTitle.textContent = card.dataset.title;
-        modalDescription.textContent = card.dataset.description;
-        modalTech.textContent = card.dataset.tech;
-        modalPeriod.textContent = card.dataset.period;
-        modalGithub.href = card.dataset.github;
+        const githubLink = card.getAttribute("data-github");
+
+        console.log("GitHub link:", githubLink);
+
+        modalTitle.textContent = card.getAttribute("data-title");
+        modalDescription.textContent = card.getAttribute("data-description");
+        modalTech.textContent = card.getAttribute("data-tech");
+        modalPeriod.textContent = card.getAttribute("data-period");
+
+        // ✅ CORRECT WAY
+        modalGithub.setAttribute("href", githubLink);
 
         modal.style.display = "flex";
+
         setTimeout(() => {
             modal.style.opacity = "1";
         }, 10);
     });
 });
+
+
 
 document.querySelector(".close-modal").onclick = function () {
     modal.style.display = "none";
@@ -188,6 +206,20 @@ function updateActiveNav() {
     });
 }
 
+// Glitch Text Rotator
+// window.addEventListener('scroll', updateActiveNav);
+
+// const textSets1 = document.querySelectorAll(".text-set");
+// if (textSets1.length > 0) {
+//     let currentIndex = 0;
+    
+//     setInterval(() => {
+//         textSets1[currentIndex].classList.remove("active");
+//         currentIndex = (currentIndex + 1) % textSets.length;
+//         textSets1[currentIndex].classList.add("active");
+//     }, 4000); 
+// }
+
 // Navbar scroll effect
 window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
@@ -205,13 +237,16 @@ updateActiveNav();
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const href = this.getAttribute('href');
+        // Only handle internal links
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
