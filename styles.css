@@ -39,7 +39,8 @@ body.light-theme {
     --accent-color: #7C3AED;
     --nav-bg: rgba(255, 255, 255, 0.95);
     --card-bg: #ffffff;
-    --card-border: rgba(0, 0, 0, 0.08); /* Soft gray border instead of neon */
+    --card-border: rgba(0, 0, 0, 0.08);
+    /* Soft gray border instead of neon */
     --subtitle-opacity: 0.7;
     --primary: #2563EB;
     --secondary: #7C3AED;
@@ -76,8 +77,8 @@ body {
     position: fixed;
     top: 20px;
     right: 30px;
-    width: 45px;
-    height: 45px;
+        width: 35px;
+        height: 35px;
     border-radius: 50%;
     border: 2px solid var(--primary);
     background: rgba(var(--primary-rgb), 0.1);
@@ -1494,7 +1495,8 @@ nav.scrolled {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding-left: 60px; /* space for the timeline on the left */
+    padding-left: 60px;
+    /* space for the timeline on the left */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1515,8 +1517,8 @@ nav.scrolled {
 /* Cards style */
 .edu-new-card {
     position: relative;
-    /* background-color: #1c1512; */
-    border: 1px solid #2e2820;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: 24px 28px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1544,7 +1546,8 @@ nav.scrolled {
 .edu-new-card::after {
     content: "";
     position: absolute;
-    left: -46px; /* -60px container padding + 20px timeline line + 7px offset */
+    left: -46px;
+    /* -60px container padding + 20px timeline line + 7px offset */
     top: 30px;
     width: 14px;
     height: 14px;
@@ -1585,7 +1588,8 @@ nav.scrolled {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
-    color: currentColor; /* Matches cyan for uni and orange for school */
+    color: currentColor;
+    /* Matches cyan for uni and orange for school */
 }
 
 .edu-institution {
@@ -1638,7 +1642,7 @@ nav.scrolled {
     color: #4ade80;
 }
 
-.pill-red{
+.pill-red {
     background: rgba(255, 0, 0, 0.15);
     border: 1px solid rgba(255, 0, 0, 0.4);
     color: #ff0000;
@@ -1669,14 +1673,15 @@ nav.scrolled {
     font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Orbitron', monospace;
-    color: currentColor; /* cyan or orange */
+    color: currentColor;
+    /* cyan or orange */
     margin-top: 2px;
 }
 
 .edu-divider {
     border: 0;
     height: 1px;
-    background-color: #2e2820;
+    background-color: var(--card-border);
     margin: 20px 0;
 }
 
@@ -1699,7 +1704,8 @@ nav.scrolled {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: currentColor; /* Matches accent color */
+    background-color: currentColor;
+    /* Matches accent color */
     margin-top: 6px;
     flex-shrink: 0;
 }
@@ -1855,6 +1861,14 @@ nav.scrolled {
     .technologies .tech-box {
         width: auto;
         padding: 8px 14px;
+        gap: 8px;
+    }
+    .technologies .tech-box img {
+        width: 24px;
+        height: 24px;
+    }
+    .technologies .tech-box span {
+        font-size: 0.95rem;
     }
 }
 
@@ -1950,7 +1964,7 @@ nav.scrolled {
     box-shadow: 0 0 25px rgba(var(--secondary-rgb), 0.3);
 }
 
-.project-card > img {
+.project-card>img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -2628,8 +2642,19 @@ footer {
     }
 
     .experience-card,
-    .edu-card {
+    .edu-card,
+    .edu-new-card {
         padding: 1.5rem;
+    }
+
+    .theme-toggle {
+        left: auto;
+        right: 0.5rem;
+        top: 20px;
+        width: 35px;
+        height: 35px;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -2665,7 +2690,7 @@ footer {
 
     .theme-toggle {
         left: auto;
-        right: 4rem;
+        right: 5.2rem;
         top: 15px;
         width: 35px;
         height: 35px;
@@ -2822,30 +2847,80 @@ footer {
     }
 }
 
-/* Phones (Max Width: 480px) */
-@media (max-width: 480px) {
-    .cta-container {
-        flex-direction: column;
-    }
-
-    .cta-button {
-        width: 100%;
-        max-width: 100%;
+/* Mobile responsive styles for 320px */
+@media (max-width: 320px) {
+    /* Add your styles for 320px here */
+    /* For example: */
+    .about-content {
+        grid-template-columns: 1fr;
         text-align: center;
+        padding: 2rem;
+        gap: 10px;
     }
-
+    .about-visual {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        height: auto;
+    }
     .about-graphic {
         width: 200px;
         height: 200px;
+        margin: 0 auto;
     }
+    /* Add more styles for 320px */
 }
 
-/* Ultra Small Phones (Max Width: 320px) */
-@media (max-width: 320px) {
+/* Mobile responsive styles for 375px */
+@media (max-width: 375px) {
+    /* Add your styles for 375px here */
+    /* For example: */
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+        gap: 8px;
+    }
+    .about-visual {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        height: auto;
+    }
+    .about-graphic {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+    /* Add more styles for 375px */
+}
 
+/* Mobile responsive styles for 425px */
+@media (max-width: 425px) {
+    /* Add your styles for 425px here */
+    /* For example: */
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+        gap: 6px;
+    }
+    .about-visual {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        height: auto;
+    }
+    .about-graphic {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+    /* Add more styles for 425px */
+}
+
+/* Phones (Max Width: 480px) */
+@media (max-width: 480px) {
     /* Compress Navigation Space */
     nav .logo {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .theme-toggle {
@@ -2854,31 +2929,44 @@ footer {
         height: 30px;
     }
 
-    /* Shrink Hero Texts Further */
+    /* Stack CTA Buttons Vertically */
+    .cta-container {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Shrink Hero Texts Further to prevent wrapping overflows */
     .intro-bio .name {
-        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
     }
 
     .glitch-text {
-        font-size: 1rem !important;
-        /* Force smaller glitch text to avoid horizontal wrap */
+        font-size: 1.1rem !important;
     }
 
     .subtitle {
-        font-size: 0.85rem !important;
+        font-size: 0.9rem !important;
     }
 
     .text-rotator {
         height: 80px;
     }
 
-    /* Shrink Image */
+    /* Shrink About Graphic Image */
     .about-graphic {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
     }
 
-    /* Tighten Section Paddings */
+    /* Tighten Section Paddings for mobile portrait */
     .hero,
     .about,
     .experience,
@@ -2886,8 +2974,8 @@ footer {
     .technologies,
     .projects,
     .features {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     /* Compress Cards internally */
@@ -2906,6 +2994,7 @@ footer {
         padding: 5px 10px;
     }
 }
+
 /* Disable animation for tech pills in experience section */
 .experience .tech-pill:hover {
     transform: none;
