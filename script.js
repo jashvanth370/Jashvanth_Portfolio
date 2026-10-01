@@ -273,7 +273,7 @@ tabs.forEach(tab => {
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     // Add your form submission logic here
-    alert('Message sent! We\'ll get back to you soon.');
+    alert('Message sent! Successfully.');
     this.reset();
 });
 
