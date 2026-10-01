@@ -1,17 +1,20 @@
-/* 
+/*
 
 TemplateMo 596 Electric Xtra
-
 https://templatemo.com/tm-596-electric-xtra
- 
+
 */
 
 @charset "utf-8";
 
-/* CSS Document */
+/* =====================================================
+   THEME VARIABLES
+   Every colour used below comes from these two blocks.
+   Change a value here and it updates the whole site.
+   ===================================================== */
 
 :root {
-    /* DARK THEME VARIABLES */
+    /* DARK THEME */
     --bg-color: #0a0a0a;
     --text-color: #ffffff;
     --secondary-color: #FF5E00;
@@ -29,10 +32,51 @@ https://templatemo.com/tm-596-electric-xtra
     --particle-color: #FF5E00;
     --gradient-primary: linear-gradient(45deg, #FF5E00, #00B2FF);
     --gradient-accent: linear-gradient(90deg, #00B2FF, #FF5E00);
+
+    /* Text */
+    --text-rgb: 255, 255, 255;
+    --text-muted: rgba(255, 255, 255, 0.72);
+    --text-strong: #ffffff;
+    --on-primary: #ffffff;              /* text on gradient buttons */
+
+    /* Surfaces & lines */
+    --surface-2: rgba(255, 255, 255, 0.05);
+    --surface-3: rgba(255, 255, 255, 0.08);
+    --surface-inset: rgba(0, 0, 0, 0.2);
+    --line: rgba(255, 255, 255, 0.1);
+    --shadow-rgb: 0, 0, 0;
+    --modal-overlay: rgba(0, 0, 0, 0.75);
+    --logo-bg: #ffffff;
+    --logo-dark-bg: #000000;           /* matches the school crest image */
+
+    /* Accent palette */
+    --accent-teal: #00e5cc;
+    --accent-teal-rgb: 0, 229, 204;
+    --accent-orange: #ff9500;
+    --mint: #00F5A0;
+    --mint-rgb: 0, 245, 160;
+    --cyan: #00D9F5;
+    --cyan-rgb: 0, 217, 245;
+    --violet: #7928CA;
+    --violet-rgb: 121, 40, 202;
+    --violet-soft: #7F55B1;
+    --pink: #FF0080;
+
+    /* Education pills */
+    --pill-purple: #c084fc;
+    --pill-purple-rgb: 121, 40, 202;
+    --pill-green: #4ade80;
+    --pill-green-rgb: 34, 197, 94;
+    --pill-red: #ff0000;
+    --pill-red-rgb: 255, 0, 0;
+
+    /* Success message */
+    --success: #00ff99;
+    --success-rgb: 0, 255, 150;
 }
 
 body.light-theme {
-    /* LIGHT THEME VARIABLES (Option 1: Modern Tech Blue/Purple) */
+    /* LIGHT THEME */
     --bg-color: #fafafa;
     --text-color: #111827;
     --secondary-color: #2563EB;
@@ -40,7 +84,6 @@ body.light-theme {
     --nav-bg: rgba(255, 255, 255, 0.95);
     --card-bg: #ffffff;
     --card-border: rgba(0, 0, 0, 0.08);
-    /* Soft gray border instead of neon */
     --subtitle-opacity: 0.7;
     --primary: #2563EB;
     --secondary: #7C3AED;
@@ -51,6 +94,39 @@ body.light-theme {
     --particle-color: #2563EB;
     --gradient-primary: linear-gradient(45deg, #2563EB, #7C3AED);
     --gradient-accent: linear-gradient(90deg, #7C3AED, #2563EB);
+
+    /* Text */
+    --text-rgb: 17, 24, 39;
+    --text-muted: rgba(17, 24, 39, 0.72);
+    --text-strong: #111827;
+    --on-primary: #ffffff;
+
+    /* Surfaces & lines */
+    --surface-2: rgba(17, 24, 39, 0.04);
+    --surface-3: rgba(17, 24, 39, 0.06);
+    --surface-inset: rgba(17, 24, 39, 0.05);
+    --line: rgba(17, 24, 39, 0.1);
+    --shadow-rgb: 17, 24, 39;
+    --modal-overlay: rgba(17, 24, 39, 0.55);
+    --logo-bg: #ffffff;
+    --logo-dark-bg: #000000;
+
+    /* Accent palette */
+    --accent-teal: #0d9488;
+    --accent-teal-rgb: 13, 148, 136;
+    --accent-orange: #d97706;
+
+    /* Education pills */
+    --pill-purple: #7c3aed;
+    --pill-purple-rgb: 124, 58, 237;
+    --pill-green: #15803d;
+    --pill-green-rgb: 22, 163, 74;
+    --pill-red: #dc2626;
+    --pill-red-rgb: 220, 38, 38;
+
+    /* Success message */
+    --success: #059669;
+    --success-rgb: 5, 150, 105;
 }
 
 /* Hide dark-themed background animations in Light Mode */
@@ -77,8 +153,8 @@ body {
     position: fixed;
     top: 20px;
     right: 30px;
-        width: 35px;
-        height: 35px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border: 2px solid var(--primary);
     background: rgba(var(--primary-rgb), 0.1);
@@ -93,19 +169,9 @@ body {
     z-index: 2000;
 }
 
-/* nav.scrolled {
-    padding: 15px 50px;
-    background: var(--nav-bg);
-    box-shadow: 0 5px 30px rgba(var(--primary-rgb), 0.2);
-}
-
-.theme-toggle.scrolled{
-    padding: 15px 50px;
-} */
-
 .theme-toggle:hover {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: #fff;
+    color: var(--on-primary);
     box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.6);
     transform: rotate(180deg);
 }
@@ -199,7 +265,7 @@ body {
     height: 100%;
     background: radial-gradient(circle at 20% 50%, rgba(var(--primary-rgb), 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 50%, rgba(var(--secondary-rgb), 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        radial-gradient(circle at 50% 50%, rgba(var(--shadow-rgb), 0.8) 0%, transparent 100%);
     z-index: -1;
     animation: gradient-shift 10s ease-in-out infinite;
 }
@@ -460,7 +526,6 @@ nav.scrolled {
 }
 
 .intro-bio .current-role {
-    /* text-align: right; */
     width: 100%;
 }
 
@@ -495,7 +560,6 @@ nav.scrolled {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* gap: 30px; */
 }
 
 /* Social Icons */
@@ -525,7 +589,6 @@ nav.scrolled {
 }
 
 .hero-content {
-    /* text-align: center; */
     text-align: left;
     margin: 0 auto;
     max-width: 1200px;
@@ -604,7 +667,7 @@ nav.scrolled {
     color: var(--text-color);
     opacity: 0;
     opacity: var(--subtitle-opacity);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(var(--text-rgb), 0.3);
     font-weight: 300;
     text-align: right;
 }
@@ -729,7 +792,7 @@ nav.scrolled {
     opacity: 0.6;
     opacity: var(--subtitle-opacity);
     animation: fade-in 1s ease-out 0.5s both;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(var(--text-rgb), 0.3);
     font-weight: 300;
 }
 
@@ -746,7 +809,6 @@ nav.scrolled {
 .cta-container {
     display: flex;
     gap: 20px;
-    /* flex-wrap: wrap; */
     margin-top: 1rem;
 }
 
@@ -770,7 +832,7 @@ nav.scrolled {
 
 .cta-primary {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: #ffffff;
+    color: var(--on-primary);
     border-color: transparent;
     animation: pulse 2s infinite;
     box-shadow: 0 0 30px var(--secondary-color);
@@ -806,7 +868,7 @@ nav.scrolled {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(var(--text-rgb), 0.2);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
@@ -819,10 +881,10 @@ nav.scrolled {
 
 .cta-secondary:hover {
     background: rgba(var(--primary-rgb), 0.1);
-    color: white;
+    color: var(--text-color);
     transform: translateY(-2px);
     box-shadow: 0 10px 40px rgba(var(--primary-rgb), 0.4), inset 0 0 30px rgba(var(--primary-rgb), 0.2);
-    border-color: #ffffff;
+    border-color: var(--text-color);
 }
 
 /* Features Section with Tabs */
@@ -858,7 +920,7 @@ nav.scrolled {
 }
 
 .feature-tabs {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -917,7 +979,7 @@ nav.scrolled {
     font-family: 'Orbitron', monospace;
     font-size: 2rem;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #ffffff, var(--primary));
+    background: linear-gradient(45deg, var(--text-strong), var(--primary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -980,10 +1042,10 @@ nav.scrolled {
     grid-template-columns: 1fr 3fr;
     gap: 60px;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-2);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--line);
     padding: 2rem;
     border-radius: 24px;
     position: relative;
@@ -998,11 +1060,11 @@ nav.scrolled {
     border-radius: 24px;
 
     background: linear-gradient(270deg,
-            #00F5A0,
-            #00D9F5,
-            #7928CA,
-            #FF0080,
-            #00F5A0);
+            var(--mint),
+            var(--cyan),
+            var(--violet),
+            var(--pink),
+            var(--mint));
 
     background-size: 400% 400%;
     animation: borderMove 8s linear infinite;
@@ -1054,7 +1116,7 @@ nav.scrolled {
 .about-description::first-letter {
     font-size: 2rem;
     font-weight: 700;
-    color: #f59f00;
+    color: var(--accent-orange);
 }
 
 
@@ -1063,7 +1125,6 @@ nav.scrolled {
     margin-bottom: 7rem;
     position: relative;
     height: 400px;
-    /* display: flex; */
     align-items: center;
     justify-content: center;
 }
@@ -1178,12 +1239,11 @@ nav.scrolled {
     display: grid;
     grid-template-columns: 4fr 1fr;
     gap: 50px;
-    /* background: var(--card-bg); */
     background: linear-gradient(135deg,
-            rgba(0, 245, 160, 0.08),
-            rgba(0, 217, 245, 0.08),
-            rgba(121, 40, 202, 0.08));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+            rgba(var(--mint-rgb), 0.08),
+            rgba(var(--cyan-rgb), 0.08),
+            rgba(var(--violet-rgb), 0.08));
+    border: 1px solid var(--line);
     padding: 2rem;
     border-radius: 15px;
     backdrop-filter: blur(14px);
@@ -1200,11 +1260,11 @@ nav.scrolled {
     border-radius: 20px;
 
     background: linear-gradient(270deg,
-            #00F5A0,
-            #00D9F5,
-            #7928CA,
-            #FF0080,
-            #00F5A0);
+            var(--mint),
+            var(--cyan),
+            var(--violet),
+            var(--pink),
+            var(--mint));
 
     background-size: 400% 400%;
     animation: borderFlow 8s linear infinite;
@@ -1231,7 +1291,7 @@ nav.scrolled {
 
 .experience-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(var(--shadow-rgb), 0.1);
 }
 
 /* LEFT SIDE */
@@ -1276,15 +1336,6 @@ nav.scrolled {
     margin-top: 1.5rem;
 }
 
-/* .tech-stack span {
-    display: inline-block;
-    background: rgba(255,255,255,0.08);
-    padding: 5px 12px;
-    margin: 5px 5px 0 0;
-    border-radius: 15px;
-    font-size: 0.8rem;
-} */
-
 .tech-item {
     display: flex;
     align-items: center;
@@ -1296,7 +1347,7 @@ nav.scrolled {
     transition: all 0.3s ease;
     font-size: 0.7rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-color);
     backdrop-filter: blur(6px);
     transition: all 0.4s ease;
     animation: floatTech 4s ease-in-out infinite;
@@ -1328,8 +1379,8 @@ nav.scrolled {
 
 .tech-item:hover {
     transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 8px 20px rgba(0, 245, 160, 0.3);
-    border-color: #00F5A0;
+    box-shadow: 0 8px 20px rgba(var(--mint-rgb), 0.3);
+    border-color: var(--mint);
 }
 
 
@@ -1348,7 +1399,7 @@ nav.scrolled {
     height: 130px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1359,7 +1410,7 @@ nav.scrolled {
 
 .logo-wrapper:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(var(--shadow-rgb), 0.15);
 }
 
 .company-logo {
@@ -1387,7 +1438,7 @@ nav.scrolled {
 }
 
 .meta-item i {
-    color: var(--primary-color);
+    color: var(--primary);
     font-size: 1rem;
 }
 
@@ -1441,7 +1492,6 @@ nav.scrolled {
 /* Vertical Line */
 .timeline-line {
     position: absolute;
-    /* left: 30px; */
     top: 0;
     bottom: 0;
     width: 3px;
@@ -1466,12 +1516,71 @@ nav.scrolled {
     }
 }
 
+/* Education logos */
+.edu-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+.edu-logo-box {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--logo-bg);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.edu-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* School logo keeps its original black background */
+.edu-logo-box.edu-logo-dark {
+    background: var(--logo-dark-bg);
+    padding: 0;
+}
+
+.edu-logo-box.edu-logo-dark .edu-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edu-heading-text {
+    min-width: 0;
+}
+
+.edu-heading-text .edu-degree,
+.edu-heading-text .edu-institution {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+    .edu-logo-box {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+    }
+
+    .edu-heading {
+        gap: 12px;
+    }
+}
 
 /* ==========================================
    NEW EDUCATION SECTION
    ========================================== */
 .education {
-    /* background-color: #12100e !important; */
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
@@ -1485,7 +1594,7 @@ nav.scrolled {
 .edu-label {
     font-size: 13px;
     font-weight: 700;
-    color: #888888;
+    color: var(--text-muted);
     letter-spacing: 4px;
     text-transform: uppercase;
     font-family: 'Orbitron', monospace;
@@ -1496,7 +1605,6 @@ nav.scrolled {
     max-width: 1000px;
     margin: 0 auto;
     padding-left: 60px;
-    /* space for the timeline on the left */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1510,7 +1618,7 @@ nav.scrolled {
     top: 30px;
     bottom: 30px;
     width: 2px;
-    background-color: #2a2a2a;
+    background-color: var(--line);
     z-index: 1;
 }
 
@@ -1522,24 +1630,24 @@ nav.scrolled {
     border-radius: 14px;
     padding: 24px 28px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(var(--shadow-rgb), 0.2);
 }
 
 .edu-new-card.uni-card {
-    border-left: 3px solid #00e5cc;
-    color: #00e5cc;
+    border-left: 3px solid var(--accent-teal);
+    color: var(--accent-teal);
 }
 
 .edu-new-card.school-card {
-    border-left: 3px solid #ff9500;
-    color: #ff9500;
+    border-left: 3px solid var(--accent-orange);
+    color: var(--accent-orange);
 }
 
 /* Hover effect */
 .edu-new-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(var(--shadow-rgb), 0.4);
+    border-color: var(--line);
 }
 
 /* Dots positioned perfectly on the timeline */
@@ -1547,7 +1655,6 @@ nav.scrolled {
     content: "";
     position: absolute;
     left: -46px;
-    /* -60px container padding + 20px timeline line + 7px offset */
     top: 30px;
     width: 14px;
     height: 14px;
@@ -1589,19 +1696,18 @@ nav.scrolled {
     font-weight: 700;
     margin: 0;
     color: currentColor;
-    /* Matches cyan for uni and orange for school */
 }
 
 .edu-institution {
     font-size: 1rem;
     font-weight: 500;
-    color: #cccccc;
+    color: var(--text-muted);
     margin: 0;
 }
 
 .edu-meta-row {
     font-size: 0.85rem;
-    color: #888888;
+    color: var(--text-muted);
 }
 
 .edu-date {
@@ -1625,32 +1731,32 @@ nav.scrolled {
 }
 
 .pill-purple {
-    background: rgba(121, 40, 202, 0.15);
-    border: 1px solid rgba(121, 40, 202, 0.4);
-    color: #c084fc;
+    background: rgba(var(--pill-purple-rgb), 0.15);
+    border: 1px solid rgba(var(--pill-purple-rgb), 0.4);
+    color: var(--pill-purple);
 }
 
 .pill-teal {
-    background: rgba(0, 229, 204, 0.15);
-    border: 1px solid rgba(0, 229, 204, 0.4);
-    color: #00e5cc;
+    background: rgba(var(--accent-teal-rgb), 0.15);
+    border: 1px solid rgba(var(--accent-teal-rgb), 0.4);
+    color: var(--accent-teal);
 }
 
 .pill-green {
-    background: rgba(34, 197, 94, 0.15);
-    border: 1px solid rgba(34, 197, 94, 0.4);
-    color: #4ade80;
+    background: rgba(var(--pill-green-rgb), 0.15);
+    border: 1px solid rgba(var(--pill-green-rgb), 0.4);
+    color: var(--pill-green);
 }
 
 .pill-red {
-    background: rgba(255, 0, 0, 0.15);
-    border: 1px solid rgba(255, 0, 0, 0.4);
-    color: #ff0000;
+    background: rgba(var(--pill-red-rgb), 0.15);
+    border: 1px solid rgba(var(--pill-red-rgb), 0.4);
+    color: var(--pill-red);
 }
 
 .edu-location {
     font-size: 0.85rem;
-    color: #888888;
+    color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -1664,7 +1770,7 @@ nav.scrolled {
 
 .edu-stat-label {
     font-size: 11px;
-    color: #888888;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -1674,7 +1780,6 @@ nav.scrolled {
     font-weight: 700;
     font-family: 'Orbitron', monospace;
     color: currentColor;
-    /* cyan or orange */
     margin-top: 2px;
 }
 
@@ -1693,7 +1798,7 @@ nav.scrolled {
 
 .edu-highlight-item {
     font-size: 12px;
-    color: #a0a0a0;
+    color: var(--text-color);
     line-height: 1.6;
     display: flex;
     align-items: flex-start;
@@ -1705,7 +1810,6 @@ nav.scrolled {
     height: 6px;
     border-radius: 50%;
     background-color: currentColor;
-    /* Matches accent color */
     margin-top: 6px;
     flex-shrink: 0;
 }
@@ -1741,7 +1845,7 @@ nav.scrolled {
         align-items: flex-start;
         text-align: left;
         width: 100%;
-        border-top: 1px dashed rgba(255, 255, 255, 0.08);
+        border-top: 1px dashed var(--line);
         padding-top: 15px;
     }
 
@@ -1785,7 +1889,7 @@ nav.scrolled {
 }
 
 .tech-category {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 12px;
     padding: 25px 30px;
@@ -1807,7 +1911,7 @@ nav.scrolled {
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--line);
     padding-bottom: 12px;
 }
 
@@ -1826,9 +1930,9 @@ nav.scrolled {
     gap: 12px;
     padding: 9px 18px;
     width: auto;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--surface-inset);
     border-radius: 45px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line);
     transition: all 0.3s ease;
     cursor: default;
 }
@@ -1863,10 +1967,12 @@ nav.scrolled {
         padding: 8px 14px;
         gap: 8px;
     }
+
     .technologies .tech-box img {
         width: 24px;
         height: 24px;
     }
+
     .technologies .tech-box span {
         font-size: 0.95rem;
     }
@@ -1895,7 +2001,7 @@ nav.scrolled {
 
 .skill-tag:hover {
     background: var(--gradient-primary);
-    color: #ffffff;
+    color: var(--on-primary);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.3);
     border-color: transparent;
@@ -1928,7 +2034,7 @@ nav.scrolled {
 .filter-btn.active,
 .filter-btn:hover {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: #fff;
+    color: var(--on-primary);
     border: none;
 }
 
@@ -1940,11 +2046,11 @@ nav.scrolled {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-2);
     backdrop-filter: blur(15px);
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--line);
     transition: 0.4s ease, transform 0.4s ease;
     display: flex;
     flex-direction: column;
@@ -2007,7 +2113,7 @@ nav.scrolled {
     justify-content: center;
     width: 32px;
     height: 32px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-2);
     border-radius: 50%;
     border: 1px solid rgba(var(--primary-rgb), 0.2);
     transition: all 0.3s ease;
@@ -2032,7 +2138,7 @@ nav.scrolled {
     padding: 8px 15px;
     border: none;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: white;
+    color: var(--on-primary);
     border-radius: 20px;
     cursor: pointer;
 }
@@ -2042,7 +2148,7 @@ nav.scrolled {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: var(--modal-overlay);
     backdrop-filter: blur(12px);
     justify-content: center;
     align-items: center;
@@ -2058,9 +2164,9 @@ nav.scrolled {
     width: 100%;
     padding: 40px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(25px);
-    color: #fff;
+    color: var(--text-color);
     overflow: hidden;
     animation: modalPop 0.4s ease forwards;
 
@@ -2073,7 +2179,7 @@ nav.scrolled {
     inset: 0;
     padding: 2px;
     border-radius: 20px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary), #7F55B1);
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--violet-soft));
     background-size: 300% 300%;
     animation: borderMove 6s linear infinite;
     -webkit-mask:
@@ -2104,7 +2210,7 @@ nav.scrolled {
     padding: 10px 20px;
     border-radius: 25px;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: white;
+    color: var(--on-primary);
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s ease;
@@ -2125,7 +2231,7 @@ nav.scrolled {
     right: 20px;
     font-size: 28px;
     cursor: pointer;
-    color: #aaa;
+    color: var(--text-muted);
     transition: 0.3s ease;
 }
 
@@ -2173,7 +2279,7 @@ nav.scrolled {
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 10px;
     padding: 40px;
@@ -2198,9 +2304,9 @@ nav.scrolled {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-2);
     border: 1px solid rgba(var(--primary-rgb), 0.3);
-    color: white;
+    color: var(--text-color);
     font-size: 1rem;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -2212,7 +2318,7 @@ nav.scrolled {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--surface-3);
 }
 
 .form-group textarea {
@@ -2224,7 +2330,7 @@ nav.scrolled {
     width: 100%;
     padding: 15px;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    color: white;
+    color: var(--on-primary);
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;
@@ -2245,9 +2351,9 @@ nav.scrolled {
 .success-message {
     margin-top: 20px;
     padding: 12px;
-    background: rgba(0, 255, 150, 0.1);
-    border: 1px solid #00ff99;
-    color: #00ff99;
+    background: rgba(var(--success-rgb), 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
     border-radius: 6px;
     opacity: 0;
     transform: translateY(10px);
@@ -2267,7 +2373,7 @@ nav.scrolled {
     font-family: 'Orbitron', monospace;
     font-size: 2rem;
     margin-bottom: 30px;
-    background: linear-gradient(45deg, #ffffff, var(--primary));
+    background: linear-gradient(45deg, var(--text-strong), var(--primary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -2305,7 +2411,7 @@ nav.scrolled {
 /* Map Section */
 .map-container {
     margin-top: 40px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -2383,8 +2489,7 @@ footer {
 }
 
 .footer-links a:hover {
-    /* background: linear-gradient(45deg, var(--primary), var(--secondary)); */
-    color: #fff;
+    color: var(--secondary);
     box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.6);
     transform: translateY(-5px);
 }
@@ -2508,7 +2613,6 @@ footer {
     height: 120px;
     margin: 0;
     overflow: hidden;
-    /* Prevents horizontal scrollbars while text slides in/out */
     width: 100%;
 }
 
@@ -2541,7 +2645,6 @@ footer {
 }
 
 .text-set.active .glitch-text {
-    /* Flies in from right, holds, then flies out left in sync with 4s loop */
     animation: move-right-to-left 4s forwards;
 }
 
@@ -2549,7 +2652,6 @@ footer {
     opacity: 0;
     animation: fade-in-up 0.5s ease forwards;
     animation-delay: 0.6s;
-    /* Fades in smoothly after title lands */
 }
 
 @keyframes move-right-to-left {
@@ -2557,21 +2659,18 @@ footer {
         transform: translateX(100vw);
         opacity: 0;
         animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-        /* Decelerate into center */
     }
 
     15% {
         transform: translateX(0);
         opacity: 1;
         animation-timing-function: linear;
-        /* Hold in place */
     }
 
     85% {
         transform: translateX(0);
         opacity: 1;
         animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
-        /* Accelerate out to left */
     }
 
     100% {
@@ -2672,7 +2771,7 @@ footer {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: rgba(10, 10, 10, 0.95);
+        background: var(--nav-bg);
         flex-direction: column;
         align-items: center;
         justify-content: start;
@@ -2704,7 +2803,6 @@ footer {
 
     .hero-wrapper {
         flex-direction: column;
-        /* Bio text on top, visual on bottom */
         text-align: center;
     }
 
@@ -2790,7 +2888,7 @@ footer {
         justify-content: flex-start;
     }
 
-    /* Technologies Sectoion */
+    /* Technologies Section */
     .tech-grid {
         grid-template-columns: 1fr;
     }
@@ -2849,75 +2947,73 @@ footer {
 
 /* Mobile responsive styles for 320px */
 @media (max-width: 320px) {
-    /* Add your styles for 320px here */
-    /* For example: */
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 2rem;
         gap: 10px;
     }
+
     .about-visual {
         margin-top: 1rem;
         margin-bottom: 1rem;
         height: auto;
     }
+
     .about-graphic {
         width: 200px;
         height: 200px;
         margin: 0 auto;
     }
-    /* Add more styles for 320px */
 }
 
 /* Mobile responsive styles for 375px */
 @media (max-width: 375px) {
-    /* Add your styles for 375px here */
-    /* For example: */
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 2rem;
         gap: 8px;
     }
+
     .about-visual {
         margin-top: 1rem;
         margin-bottom: 1rem;
         height: auto;
     }
+
     .about-graphic {
         width: 180px;
         height: 180px;
         margin: 0 auto;
     }
-    /* Add more styles for 375px */
 }
 
 /* Mobile responsive styles for 425px */
 @media (max-width: 425px) {
-    /* Add your styles for 425px here */
-    /* For example: */
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 2rem;
         gap: 6px;
     }
+
     .about-visual {
         margin-top: 1rem;
         margin-bottom: 1rem;
         height: auto;
     }
+
     .about-graphic {
         width: 160px;
         height: 160px;
         margin: 0 auto;
     }
-    /* Add more styles for 425px */
 }
 
 /* Phones (Max Width: 480px) */
 @media (max-width: 480px) {
+
     /* Compress Navigation Space */
     nav .logo {
         font-size: 1.3rem;
@@ -2999,7 +3095,7 @@ footer {
 .experience .tech-pill:hover {
     transform: none;
     box-shadow: none;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-2);
     border-color: rgba(var(--primary-rgb), 0.2);
     cursor: default;
 }
